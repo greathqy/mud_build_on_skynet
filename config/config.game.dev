@@ -1,0 +1,52 @@
+root = "./"
+app_root = "../"
+
+thread = 1
+logger = nil
+harbor = 0
+start = "main"
+bootstrap = "snlua bootstrap"
+
+luaservice = root .. "service/?.lua;" .. app_root .. "server/service/?.lua;" .. app_root .. "shared_service/?.lua" 
+lualoader = "lualib/loader.lua"
+
+snax = app_root .. "server/service/?.lua"
+cpath = root .. "cservice/?.so"
+preload = app_root .. "shared_lib/preload.lua"
+
+--value: debug | info | warn | error
+log_level = "debug"
+
+debug_console_port = 4040
+
+--game server & login server related conf
+loginserver_host = "127.0.0.1"
+loginserver_port = 8080
+loginserver_slave_instance = 1
+loginserver_authenticate_backend = "192.168.56.101"
+loginserver_authenticate_endpoint = "/auth.php"
+
+gameserver_host = "127.0.0.1"
+gameserver_port = 8081
+
+--watchdog & agent conf
+watchdog_agentpool_min_size = 1
+watchdog_bgsave_interval = 600 		--save agent per x seconds
+watchdog_check_idle_interval = 60	--check idle agent per x seconds
+agent_session_expire = 600
+
+--mysql conf
+mysql_host = "127.0.0.1"
+mysql_port = 3306
+mysql_username = "root"
+mysql_password = ""
+mysql_database = "skynetdemo"
+
+--redis conf
+redis_host = "127.0.0.1"
+redis_port = 6379
+redis_logging_queuename = "gamelogs"
+
+persistent_slave_poolsize = 1
+
+--daemon = "./skynet.pid"
